@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const MovieDetailsBtnGoBeackDiv = styled.div`
   margin-left: 80px;
@@ -69,6 +70,7 @@ export const MovieDetailsBtnGoBeackspan2 = styled.span`
 export const DivContentMovie = styled.div`
   position: relative;
   margin: 60px 5% auto;
+  margin-bottom: 60px;
 
   background: linear-gradient(0deg, black, rgb(48, 47, 47));
   &::before,
@@ -125,4 +127,149 @@ export const MovieContentDiv = styled.div`
   color: #fff;
 
   /* z-index: 9; */
+`;
+
+export const MovieContentDivWraper = styled.div`
+  display: flex;
+`;
+export const NavListDiv = styled.div`
+  display: flex;
+  gap: 40px;
+  padding-bottom: 40px;
+`;
+
+export const NavListCast = styled(NavLink)`
+  position: relative;
+  display: inline-block;
+  font-size: 1.5em;
+  color: #0ef;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 2px solid #0ef;
+  padding: 10px 30px;
+  z-index: 1;
+  transition: color 1s, box-shadow 0.5s;
+  overflow: hidden;
+  &:hover {
+    transition-delay: 0s, 0.5s;
+    color: #fff;
+    box-shadow: 0 0 10px #0ef, 0 0 20px #0ef, 0 0 40px #0ef, 0 0 80px #0ef,
+      0 0 160px #0ef;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 0;
+    height: 100%;
+    background: #0ef;
+    transform: skewX(35deg);
+    z-index: -1;
+    transition: 1s;
+  }
+  &:hover::before {
+    width: 100%;
+  }
+`;
+export const NavListReduce = styled(NavLink)`
+  position: relative;
+  display: inline-block;
+  font-size: 1.5em;
+  color: #0ef;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 2px solid #0ef;
+  padding: 10px 30px;
+  z-index: 1;
+  transition: color 1s, box-shadow 0.5s;
+  overflow: hidden;
+  &:hover {
+    transition-delay: 0s, 0.5s;
+    color: #fff;
+    box-shadow: 0 0 10px #0ef, 0 0 20px #0ef, 0 0 40px #0ef, 0 0 80px #0ef,
+      0 0 160px #0ef;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 0;
+    height: 100%;
+    background: #0ef;
+    transform: skewX(35deg);
+    z-index: -1;
+    transition: 1s;
+  }
+  &:hover::before {
+    width: 100%;
+  }
+`;
+
+export const MovieContentDivWraperText = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+`;
+
+export const MovieContentCategoriUl = styled.ul`
+  display: flex;
+  gap: 20px;
+  padding-left: 0;
+  padding-bottom: 35px;
+`;
+
+export const MovieContentCategori = styled.li`
+  display: flex;
+  position: relative;
+  background: #fff;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  padding: 10px 30px;
+  transition: 0.5s;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #27282c;
+  }
+  font-size: 14px;
+`;
+
+export const MovieContentCategoriSpan = styled.span`
+  position: relative;
+`;
+export const MovieContentCategoriI = styled.i`
+  position: absolute;
+  inset: 0;
+  display: block;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 4px;
+    background: #27282c;
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+  }
+
+  &::before {
+    top: 0;
+    left: 80%;
+  }
+
+  &::after {
+    bottom: 0;
+    left: 20%;
+  }
 `;

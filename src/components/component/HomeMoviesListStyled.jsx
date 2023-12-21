@@ -16,8 +16,13 @@ export const HomeListItemdiv = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  &:hover {
+    transform: scale(1.1);
+  }
 
-  &::after {
+  transition: transform 0.3s ease;
+
+  &:hover::after {
     content: '';
     position: absolute;
     width: 500px;
@@ -32,7 +37,7 @@ export const HomeListItemdiv = styled.div`
     animation-delay: -2s;
   }
 
-  &::before {
+  &:hover::before {
     content: '';
     position: absolute;
     width: 500px;
@@ -84,4 +89,5 @@ export const HomeListPItem = styled.p`
   text-align: center;
   margin: 0 auto;
   margin-top: 20px;
+  color: #fff;
 `;

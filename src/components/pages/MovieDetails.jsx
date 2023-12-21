@@ -1,19 +1,22 @@
 import { getMovie } from 'components/APP/App';
 import React, { useEffect, useState } from 'react';
-import {
-  NavLink,
-  Outlet,
-  useLocation,
-  useNavigate,
-  useParams,
-} from 'react-router-dom';
+import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import {
   DivContentMovie,
+  MovieContentCategori,
+  MovieContentCategoriI,
+  MovieContentCategoriSpan,
+  MovieContentCategoriUl,
   MovieContentDiv,
+  MovieContentDivWraper,
+  MovieContentDivWraperText,
   MovieDetailsBtnGoBeack,
   MovieDetailsBtnGoBeackDiv,
   MovieDetailsBtnGoBeackspan1,
   MovieDetailsBtnGoBeackspan2,
+  NavListCast,
+  NavListDiv,
+  NavListReduce,
 } from './MovieDetailsStyled';
 
 const MovieDetails = () => {
@@ -59,13 +62,13 @@ const MovieDetails = () => {
       {movie && (
         <DivContentMovie>
           <MovieContentDiv>
-            <div>
+            <MovieContentDivWraper>
               <img
                 src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                 alt={movie.title}
                 width={300}
               />
-              <div>
+              <MovieContentDivWraperText>
                 <h2>{movie.title}</h2>
                 <p>User score - {movie.vote_average.toFixed(1)}/10</p>
                 <div>
@@ -73,16 +76,25 @@ const MovieDetails = () => {
                   <p>{movie.overview}</p>
                 </div>
                 <div>
-                  <h4>Genres</h4>
-                  <p>{movie.genres.map(el => el.name + ' ')}</p>
-                </div>
-              </div>
-            </div>
+                  <h3>Genres</h3>
 
-            <div>
-              <NavLink to="cast">Cast</NavLink>
-              <NavLink to="reviews">Reviews</NavLink>
-            </div>
+                  <MovieContentCategoriUl>
+                    {movie.genres.map(el => (
+                      <MovieContentCategori key={el.id}>
+                        <MovieContentCategoriSpan>
+                          {el.name + ' '}
+                        </MovieContentCategoriSpan>
+                        <MovieContentCategoriI></MovieContentCategoriI>
+                      </MovieContentCategori>
+                    ))}
+                  </MovieContentCategoriUl>
+                </div>
+                <NavListDiv>
+                  <NavListCast to="cast">Cast</NavListCast>
+                  <NavListReduce to="reviews">Reviews</NavListReduce>
+                </NavListDiv>
+              </MovieContentDivWraperText>
+            </MovieContentDivWraper>
           </MovieContentDiv>
         </DivContentMovie>
       )}

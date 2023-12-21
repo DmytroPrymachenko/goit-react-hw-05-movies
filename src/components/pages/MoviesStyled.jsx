@@ -35,7 +35,6 @@ export const AppProgect = styled.div`
 
   a {
     text-decoration: none;
-    color: #fff;
   }
   img {
     border: 0;

@@ -2,6 +2,7 @@ import { getCast } from 'components/APP/App';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import photokino from './ukrkino.jpg';
+import { CastLi, CastUl } from './CastStyles';
 
 const Cast = () => {
   const [cast, setCast] = useState(null);
@@ -21,11 +22,11 @@ const Cast = () => {
   return (
     <div>
       {isLoading && <p>Завантаження</p>}
-      <ul>
+      <CastUl>
         {cast &&
           cast.map(e => {
             return (
-              <li key={e.id}>
+              <CastLi key={e.id}>
                 <img
                   width="150"
                   src={
@@ -39,10 +40,10 @@ const Cast = () => {
                 <p>{e.name}</p>
 
                 <p>{e.character}</p>
-              </li>
+              </CastLi>
             );
           })}
-      </ul>
+      </CastUl>
     </div>
   );
 };
