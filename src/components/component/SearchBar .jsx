@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 export const SearchBar = () => {
   const [movie, setMovie] = useState('');
+  const [, setSearchParams] = useSearchParams();
   function formSubmit(e) {
     e.preventDefault();
+    if (movie) {
+      setSearchParams({ search: movie });
+    }
   }
   function imputOnChange(e) {
     setMovie(e.target.value);
@@ -15,9 +20,10 @@ export const SearchBar = () => {
           type="text"
           name="search"
           placeholder="Movie"
-          value={imputOnChange}
+          value={movie}
           onChange={imputOnChange}
         />
+        <button></button>
       </form>
     </>
   );

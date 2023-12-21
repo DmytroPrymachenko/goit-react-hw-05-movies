@@ -21,7 +21,7 @@ export const HomeMoviesList = () => {
 
     fetchMovies();
   }, []);
-  console.log(movies);
+
   return (
     <>
       <h1>Привіт</h1>
