@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Layout } from './layout/layout';
 import Cast from './component/Cast';
 import Reviews from './component/Reviews';
+import { AppProgect } from './pages/MoviesStyled';
 
 // const Layout = lazy(() => import('./layout/layout'));
 const Home = lazy(() => import('./pages/Home'));
@@ -11,7 +12,7 @@ const MovieDetails = lazy(() => import('./pages/MovieDetails'));
 
 export const App = () => {
   return (
-    <div>
+    <AppProgect>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -25,6 +26,6 @@ export const App = () => {
           <Route path="*" element={<Home />} />
         </Routes>
       </Suspense>
-    </div>
+    </AppProgect>
   );
 };

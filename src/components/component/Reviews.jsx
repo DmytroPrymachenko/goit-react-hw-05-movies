@@ -17,7 +17,7 @@ const Reviews = () => {
     }
     getReviewsMovie();
   }, [movieId]);
-
+  console.log(reviews);
   return (
     <div>
       {isLoading && <p>Loading...</p>}

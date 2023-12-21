@@ -1,6 +1,7 @@
 import { getCast } from 'components/APP/App';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import photokino from './ukrkino.jpg';
 
 const Cast = () => {
   const [cast, setCast] = useState(null);
@@ -30,12 +31,13 @@ const Cast = () => {
                   src={
                     e.profile_path
                       ? `https://image.tmdb.org/t/p/original/${e.profile_path}`
-                      : '/'
+                      : photokino
                   }
                   alt={e.name}
                 />
 
                 <p>{e.name}</p>
+
                 <p>{e.character}</p>
               </li>
             );

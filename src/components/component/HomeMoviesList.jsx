@@ -1,6 +1,15 @@
 import { getMoviesToday } from 'components/APP/App';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import {
+  HomeList,
+  HomeListDivItem,
+  HomeListImgItem,
+  HomeListItem,
+  HomeListItemdiv,
+  HomeListPItem,
+  HomeListSpan,
+} from './HomeMoviesListStyled';
 
 export const HomeMoviesList = () => {
   const [movies, setMovies] = useState([]);
@@ -21,20 +30,30 @@ export const HomeMoviesList = () => {
 
     fetchMovies();
   }, []);
-
+  console.log(movies);
   return (
     <>
-      <h1>Привіт</h1>
       {isLoading && <h1>Завантаження</h1>}
-      <ul>
+      <HomeList>
         {movies.map(movie => (
-          <li key={movie.id}>
+          <HomeListItem key={movie.id}>
             <Link to={`movies/` + movie.id.toString()}>
-              {movie.title || movie.name}
+              <HomeListItemdiv>
+                <HomeListSpan>
+                  <HomeListDivItem>
+                    <HomeListImgItem
+                      src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                      alt={movie.title}
+                      width={200}
+                    />
+                    <HomeListPItem>{movie.title || movie.name}</HomeListPItem>
+                  </HomeListDivItem>
+                </HomeListSpan>
+              </HomeListItemdiv>
             </Link>
-          </li>
+          </HomeListItem>
         ))}
-      </ul>
+      </HomeList>
     </>
   );
 };

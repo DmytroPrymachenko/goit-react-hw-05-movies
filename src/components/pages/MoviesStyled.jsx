@@ -17,3 +17,27 @@ export const ListItemMovies = styled.ul`
 export const ItemMovies = styled.li`
   display: flex;
 `;
+
+export const AppProgect = styled.div`
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: normal;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  img {
+    border: 0;
+  }
+`;

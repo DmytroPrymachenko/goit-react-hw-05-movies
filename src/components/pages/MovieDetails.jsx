@@ -7,6 +7,14 @@ import {
   useNavigate,
   useParams,
 } from 'react-router-dom';
+import {
+  DivContentMovie,
+  MovieContentDiv,
+  MovieDetailsBtnGoBeack,
+  MovieDetailsBtnGoBeackDiv,
+  MovieDetailsBtnGoBeackspan1,
+  MovieDetailsBtnGoBeackspan2,
+} from './MovieDetailsStyled';
 
 const MovieDetails = () => {
   const location = useLocation();
@@ -39,36 +47,45 @@ const MovieDetails = () => {
   return (
     <section>
       {isLoading && <div>Loading...</div>}
-      <button onClick={buttonBackDetails}>Go Back</button>
+      <MovieDetailsBtnGoBeackDiv>
+        <MovieDetailsBtnGoBeack onClick={buttonBackDetails}>
+          Go Back
+        </MovieDetailsBtnGoBeack>
+        <MovieDetailsBtnGoBeackspan1></MovieDetailsBtnGoBeackspan1>
+        <MovieDetailsBtnGoBeackspan2></MovieDetailsBtnGoBeackspan2>
+      </MovieDetailsBtnGoBeackDiv>
+
       {error && <p>Error</p>}
       {movie && (
-        <div>
-          <div>
-            <img
-              src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-              alt={movie.title}
-              width={300}
-            />
+        <DivContentMovie>
+          <MovieContentDiv>
             <div>
-              <h2>{movie.title}</h2>
-              <p>User score - {movie.vote_average.toFixed(1)}/10</p>
+              <img
+                src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                alt={movie.title}
+                width={300}
+              />
               <div>
-                <h3>Overview</h3>
-                <p>{movie.overview}</p>
-              </div>
-              <div>
-                <h4>Genres</h4>
-                <p>{movie.genres.map(el => el.name + ' ')}</p>
+                <h2>{movie.title}</h2>
+                <p>User score - {movie.vote_average.toFixed(1)}/10</p>
+                <div>
+                  <h3>Overview</h3>
+                  <p>{movie.overview}</p>
+                </div>
+                <div>
+                  <h4>Genres</h4>
+                  <p>{movie.genres.map(el => el.name + ' ')}</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <NavLink to="cast">Cast</NavLink>
-            <NavLink to="reviews">Reviews</NavLink>
-          </div>
-        </div>
-      )}
 
+            <div>
+              <NavLink to="cast">Cast</NavLink>
+              <NavLink to="reviews">Reviews</NavLink>
+            </div>
+          </MovieContentDiv>
+        </DivContentMovie>
+      )}
       <Outlet />
     </section>
   );
