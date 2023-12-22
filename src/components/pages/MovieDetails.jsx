@@ -18,6 +18,7 @@ import {
   NavListDiv,
   NavListReduce,
 } from './MovieDetailsStyled';
+import Errorstory from 'components/component/Errorstory';
 
 const MovieDetails = () => {
   const location = useLocation();
@@ -58,7 +59,7 @@ const MovieDetails = () => {
         <MovieDetailsBtnGoBeackspan2></MovieDetailsBtnGoBeackspan2>
       </MovieDetailsBtnGoBeackDiv>
 
-      {error && <p>Error</p>}
+      {error && <Errorstory />}
       {movie && (
         <DivContentMovie>
           <MovieContentDiv>

@@ -16,6 +16,7 @@ const StyledErrorWrapper = styled.div`
 
   font-weight: bold;
   transition: transform 0.3s ease-in-out;
+  margin-top: -200px;
 
   &:hover {
     transform: scale(1.2);

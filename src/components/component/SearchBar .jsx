@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { StyledForm, StyledInput } from './SearchBarStyled';
+import {
+  FTest2,
+  FormButton,
+  FormDiv,
+  FormDivbtn,
+  StyledForm,
+  StyledInput,
+} from './SearchBarStyled';
+
+import imgTest2 from '../pages/photo/lodoBtn.png';
 
 export const SearchBar = () => {
   const [movie, setMovie] = useState('');
@@ -15,7 +24,7 @@ export const SearchBar = () => {
     setMovie(e.target.value);
   }
   return (
-    <>
+    <FormDiv>
       <StyledForm onSubmit={formSubmit}>
         <StyledInput
           type="text"
@@ -24,9 +33,12 @@ export const SearchBar = () => {
           value={movie}
           onChange={imputOnChange}
         />
-
-        <button></button>
+        <FormDivbtn>
+          <FormButton type="submit">
+            <FTest2 src={imgTest2} alt="" />
+          </FormButton>
+        </FormDivbtn>
       </StyledForm>
-    </>
+    </FormDiv>
   );
 };

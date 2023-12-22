@@ -3,7 +3,14 @@ import { SearchBar } from 'components/component/SearchBar ';
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { Notify } from 'notiflix';
-import { ItemMovies, ItemPhotoMovies, ListItemMovies } from './MoviesStyled';
+import {
+  ItemMovies,
+  ItemPhotoMovies,
+  ListItemMovies,
+  ListItemP,
+  MovesListDivItem,
+} from './MoviesStyled';
+import PhotoError from './photo/ukrkino.jpg';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -36,17 +43,19 @@ const Movies = () => {
           movies.map(e => {
             return (
               <ItemMovies key={e.id}>
-                <Link to={`/movies/${e.id}`} state={location}>
-                  <ItemPhotoMovies
-                    src={
-                      e.poster_path
-                        ? `https://image.tmdb.org/t/p/original/${e.poster_path}`
-                        : './photo/ukrkino.jpg'
-                    }
-                    alt="Logo"
-                  />
-                  <p>{e.original_title}</p>
-                </Link>
+                <MovesListDivItem>
+                  <Link to={`/movies/${e.id}`} state={location}>
+                    <ItemPhotoMovies
+                      src={
+                        e.poster_path
+                          ? `https://image.tmdb.org/t/p/original/${e.poster_path}`
+                          : PhotoError
+                      }
+                      alt="Logo"
+                    />
+                    <ListItemP>{e.original_title}</ListItemP>
+                  </Link>
+                </MovesListDivItem>
               </ItemMovies>
             );
           })}
