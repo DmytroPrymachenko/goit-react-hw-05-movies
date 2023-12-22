@@ -19,6 +19,7 @@ import {
   NavListReduce,
 } from './MovieDetailsStyled';
 import Errorstory from 'components/component/Errorstory';
+import { Loading } from 'components/component/CastStyles';
 
 const MovieDetails = () => {
   const location = useLocation();
@@ -50,7 +51,7 @@ const MovieDetails = () => {
 
   return (
     <section>
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <Loading />}
       <MovieDetailsBtnGoBeackDiv>
         <MovieDetailsBtnGoBeack onClick={buttonBackDetails}>
           Go Back

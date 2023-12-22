@@ -12,6 +12,8 @@ import {
 } from './MoviesStyled';
 import PhotoError from './photo/ukrkino.jpg';
 
+import { Loading } from 'components/component/CastStyles';
+
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [isloading, setIsloading] = useState(false);
@@ -37,7 +39,7 @@ const Movies = () => {
   return (
     <section>
       <SearchBar />
-      {isloading && <div></div>}
+      {isloading && <Loading />}
       <ListItemMovies>
         {movies &&
           movies.map(e => {

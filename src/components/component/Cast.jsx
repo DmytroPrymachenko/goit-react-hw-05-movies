@@ -2,7 +2,15 @@ import { getCast } from 'components/APP/App';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import photokino from './ukrkino.jpg';
-import { CastLi, CastUl } from './CastStyles';
+import {
+  CastListDivItem,
+  CastListItemP,
+  CastListItemPToo,
+  ItemCast,
+  ItemPhotoCast,
+  ListItemCast,
+  Loading,
+} from './CastStyles';
 
 const Cast = () => {
   const [cast, setCast] = useState(null);
@@ -21,30 +29,32 @@ const Cast = () => {
 
   return (
     <div>
-      {isLoading && <p></p>}
+      {isLoading && <Loading />}
 
-      <CastUl>
+      <ListItemCast>
         {cast &&
           cast.map(e => {
             return (
-              <CastLi key={e.id}>
-                <img
-                  width="150"
-                  src={
-                    e.profile_path
-                      ? `https://image.tmdb.org/t/p/original/${e.profile_path}`
-                      : photokino
-                  }
-                  alt={e.name}
-                />
+              <ItemCast key={e.id}>
+                <CastListDivItem>
+                  <ItemPhotoCast
+                    width="150"
+                    src={
+                      e.profile_path
+                        ? `https://image.tmdb.org/t/p/original/${e.profile_path}`
+                        : photokino
+                    }
+                    alt={e.name}
+                  />
 
-                <p>{e.name}</p>
+                  <CastListItemP>{e.name}</CastListItemP>
 
-                <p>{e.character}</p>
-              </CastLi>
+                  <CastListItemPToo>{e.character}</CastListItemPToo>
+                </CastListDivItem>
+              </ItemCast>
             );
           })}
-      </CastUl>
+      </ListItemCast>
     </div>
   );
 };

@@ -11,6 +11,8 @@ import {
   HomeListSpan,
 } from './HomeMoviesListStyled';
 
+import { Loading } from './CastStyles';
+
 export const HomeMoviesList = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -33,7 +35,7 @@ export const HomeMoviesList = () => {
   console.log(movies);
   return (
     <>
-      {isLoading && <h1>Завантаження</h1>}
+      {isLoading && <Loading />}
 
       <HomeList>
         {movies.map(movie => (
