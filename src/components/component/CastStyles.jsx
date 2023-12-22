@@ -13,3 +13,8 @@ export const CastLi = styled.li`
   align-content: center;
   align-items: center;
 `;
+
+export const Loading = styled.div`
+  width: 500px;
+  height: 500px;
+`;

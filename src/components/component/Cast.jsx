@@ -2,7 +2,8 @@ import { getCast } from 'components/APP/App';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import photokino from './ukrkino.jpg';
-import { CastLi, CastUl } from './CastStyles';
+import { CastLi, CastUl, Loading } from './CastStyles';
+import Errorstory from './Errorstory';
 
 const Cast = () => {
   const [cast, setCast] = useState(null);
@@ -21,7 +22,8 @@ const Cast = () => {
 
   return (
     <div>
-      {isLoading && <p>Завантаження</p>}
+      {isLoading && <p></p>}
+
       <CastUl>
         {cast &&
           cast.map(e => {

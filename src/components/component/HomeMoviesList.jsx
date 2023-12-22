@@ -10,6 +10,7 @@ import {
   HomeListPItem,
   HomeListSpan,
 } from './HomeMoviesListStyled';
+import Errorstory from './Errorstory';
 
 export const HomeMoviesList = () => {
   const [movies, setMovies] = useState([]);
@@ -34,6 +35,7 @@ export const HomeMoviesList = () => {
   return (
     <>
       {isLoading && <h1>Завантаження</h1>}
+      <Errorstory />
       <HomeList>
         {movies.map(movie => (
           <HomeListItem key={movie.id}>

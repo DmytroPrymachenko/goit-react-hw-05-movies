@@ -13,6 +13,7 @@ export const StyledForm = styled.form`
   font-weight: 400;
   padding: 10px 30px;
   transition: 0.5s;
+  padding-top: 15px;
 
   &:hover,
   &:focus-within {
@@ -36,9 +37,9 @@ export const StyledInput = styled.input`
   border: none;
   background: none;
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1.2em; /* Зменшено розмір шрифту */
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em; /* Зменшено відстань між буквами */
   outline: none;
   transition: border-bottom 0.5s, color 0.5s, letter-spacing 0.5s;
   z-index: 9;
@@ -53,6 +54,7 @@ export const StyledInput = styled.input`
   &:focus {
     border-bottom: 2px solid #6eff3e;
     color: #6eff3e;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.1em;
+    border-bottom: none; /* Зменшено відстань між буквами при фокусі */
   }
 `;
