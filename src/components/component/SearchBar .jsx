@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { StyledForm, StyledInput, StyledInputI } from './SearchBarStyled';
+import { StyledForm, StyledInput } from './SearchBarStyled';
 
 export const SearchBar = () => {
   const [movie, setMovie] = useState('');

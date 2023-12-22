@@ -2,8 +2,7 @@ import { getCast } from 'components/APP/App';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import photokino from './ukrkino.jpg';
-import { CastLi, CastUl, Loading } from './CastStyles';
-import Errorstory from './Errorstory';
+import { CastLi, CastUl } from './CastStyles';
 
 const Cast = () => {
   const [cast, setCast] = useState(null);
