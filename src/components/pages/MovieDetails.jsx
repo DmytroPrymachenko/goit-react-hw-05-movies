@@ -45,15 +45,17 @@ const MovieDetails = () => {
     }
     getMovieDetail();
   }, [movieId]);
-  const buttonBackDetails = () => {
-    navigate(location.state?.from || '/');
-  };
+  // const buttonBackDetails = () => {
+  //   navigate(location.state?.from || '/');
+  // };
 
   return (
     <section>
       {isLoading && <Loading />}
       <MovieDetailsBtnGoBeackDiv>
-        <MovieDetailsBtnGoBeack onClick={buttonBackDetails}>
+        <MovieDetailsBtnGoBeack
+          onClick={() => navigate(location.state ?? '/movies')}
+        >
           Go Back
         </MovieDetailsBtnGoBeack>
         <MovieDetailsBtnGoBeackspan1></MovieDetailsBtnGoBeackspan1>
