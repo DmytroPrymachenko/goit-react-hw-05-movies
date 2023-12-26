@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import kinoshka from '../pages/photo/Logo.png';
+import kinoshka from '../component/img/Group1.png';
 import {
   Header,
   HeaderImg,

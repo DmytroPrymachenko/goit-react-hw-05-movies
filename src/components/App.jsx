@@ -1,8 +1,8 @@
 import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './layout/layout';
-import Cast from './component/Cast';
-import Reviews from './component/Reviews';
+import Cast from './component/Cast/Cast';
+import Reviews from './component/Reviews/Reviews';
 import { AppProgect } from './pages/MoviesStyled';
 
 // const Layout = lazy(() => import('./layout/layout'));
@@ -23,7 +23,7 @@ export const App = () => {
               <Route path="reviews" element={<Reviews />}></Route>
             </Route>
           </Route>
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<Layout />} />
         </Routes>
       </Suspense>
     </AppProgect>

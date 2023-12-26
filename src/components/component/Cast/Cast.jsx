@@ -1,7 +1,7 @@
 import { getCast } from 'components/APP/App';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import photokino from './ukrkino.jpg';
+import photokino from '../img/ukrkino.jpg';
 import {
   CastListDivItem,
   CastListItemP,

@@ -11,7 +11,7 @@ import {
   HomeListSpan,
 } from './HomeMoviesListStyled';
 
-import { Loading } from './CastStyles';
+import { Loading } from '../Cast/CastStyles';
 
 export const HomeMoviesList = () => {
   const [movies, setMovies] = useState([]);

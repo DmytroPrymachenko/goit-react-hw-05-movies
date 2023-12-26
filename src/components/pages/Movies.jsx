@@ -1,5 +1,5 @@
 import { getSearchMovie } from 'components/APP/App';
-import { SearchBar } from 'components/component/SearchBar ';
+import { SearchBar } from 'components/component/SearchBar/SearchBar ';
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { Notify } from 'notiflix';
@@ -10,9 +10,9 @@ import {
   ListItemP,
   MovesListDivItem,
 } from './MoviesStyled';
-import PhotoError from './photo/ukrkino.jpg';
+import PhotoError from '../component/img/ukrkino.jpg';
 
-import { Loading } from 'components/component/CastStyles';
+import { Loading } from 'components/component/Cast/CastStyles';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -40,28 +40,27 @@ const Movies = () => {
     <section>
       <SearchBar />
       {isloading && <Loading />}
-      <ListItemMovies>
-        {movies &&
-          movies.map(e => {
-            return (
-              <ItemMovies key={e.id}>
-                <MovesListDivItem>
-                  <Link to={`/movies/${e.id}`} state={location}>
-                    <ItemPhotoMovies
-                      src={
-                        e.poster_path
-                          ? `https://image.tmdb.org/t/p/original/${e.poster_path}`
-                          : PhotoError
-                      }
-                      alt="Logo"
-                    />
-                    <ListItemP>{e.original_title}</ListItemP>
-                  </Link>
-                </MovesListDivItem>
-              </ItemMovies>
-            );
-          })}
-      </ListItemMovies>
+      {movies && movies.length > 0 && (
+        <ListItemMovies>
+          {movies.map(e => (
+            <ItemMovies key={e.id}>
+              <MovesListDivItem>
+                <Link to={`/movies/${e.id}`} state={location}>
+                  <ItemPhotoMovies
+                    src={
+                      e.poster_path
+                        ? `https://image.tmdb.org/t/p/original/${e.poster_path}`
+                        : PhotoError
+                    }
+                    alt="Logo"
+                  />
+                  <ListItemP>{e.original_title}</ListItemP>
+                </Link>
+              </MovesListDivItem>
+            </ItemMovies>
+          ))}
+        </ListItemMovies>
+      )}
     </section>
   );
 };

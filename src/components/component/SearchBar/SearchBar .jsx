@@ -9,7 +9,7 @@ import {
   StyledInput,
 } from './SearchBarStyled';
 
-import imgTest2 from '../pages/photo/lodoBtn.png';
+import imgBtn from '../img/lodoBtn.png';
 
 export const SearchBar = () => {
   const [movie, setMovie] = useState('');
@@ -35,7 +35,7 @@ export const SearchBar = () => {
         />
         <FormDivbtn>
           <FormButton type="submit">
-            <FTest2 src={imgTest2} alt="" />
+            <FTest2 src={imgBtn} alt="" />
           </FormButton>
         </FormDivbtn>
       </StyledForm>

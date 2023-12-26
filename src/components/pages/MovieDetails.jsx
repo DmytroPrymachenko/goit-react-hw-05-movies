@@ -18,8 +18,8 @@ import {
   NavListDiv,
   NavListReduce,
 } from './MovieDetailsStyled';
-import Errorstory from 'components/component/Errorstory';
-import { Loading } from 'components/component/CastStyles';
+import Errorstory from 'components/component/Error/Errorstory';
+import { Loading } from 'components/component/Cast/CastStyles';
 
 const MovieDetails = () => {
   const location = useLocation();
@@ -46,7 +46,7 @@ const MovieDetails = () => {
     getMovieDetail();
   }, [movieId]);
   const buttonBackDetails = () => {
-    navigate(location.state ?? '/');
+    navigate(location.state?.from || '/');
   };
 
   return (
