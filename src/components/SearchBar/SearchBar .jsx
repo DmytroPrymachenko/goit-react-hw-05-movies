@@ -9,7 +9,7 @@ import {
   StyledInput,
 } from './SearchBarStyled';
 
-import imgBtn from '../img/lodoBtn.png';
+import imgBtn from '../../img/lodoBtn.png';
 
 export const SearchBar = () => {
   const [movie, setMovie] = useState('');

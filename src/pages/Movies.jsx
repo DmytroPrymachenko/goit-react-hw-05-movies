@@ -10,7 +10,7 @@ import {
   ListItemP,
   MovesListDivItem,
 } from './MoviesStyled';
-import PhotoError from '../components/img/ukrkino.jpg';
+import PhotoError from '../img/ukrkino.jpg';
 
 import { Loading } from 'components/Cast/CastStyles';
 

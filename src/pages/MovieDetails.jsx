@@ -94,8 +94,12 @@ const MovieDetails = () => {
                   </MovieContentCategoriUl>
                 </div>
                 <NavListDiv>
-                  <NavListCast to="cast">Cast</NavListCast>
-                  <NavListReduce to="reviews">Reviews</NavListReduce>
+                  <NavListCast to="cast" state={location.state}>
+                    Cast
+                  </NavListCast>
+                  <NavListReduce to="reviews" state={location.state}>
+                    Reviews
+                  </NavListReduce>
                 </NavListDiv>
               </MovieContentDivWraperText>
             </MovieContentDivWraper>
