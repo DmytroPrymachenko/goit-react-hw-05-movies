@@ -1,5 +1,5 @@
 import { getSearchMovie } from 'components/APP/App';
-import { SearchBar } from 'components/component/SearchBar/SearchBar ';
+import { SearchBar } from 'components/SearchBar/SearchBar ';
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { Notify } from 'notiflix';
@@ -10,9 +10,9 @@ import {
   ListItemP,
   MovesListDivItem,
 } from './MoviesStyled';
-import PhotoError from '../component/img/ukrkino.jpg';
+import PhotoError from '../components/img/ukrkino.jpg';
 
-import { Loading } from 'components/component/Cast/CastStyles';
+import { Loading } from 'components/Cast/CastStyles';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);

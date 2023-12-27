@@ -18,8 +18,8 @@ import {
   NavListDiv,
   NavListReduce,
 } from './MovieDetailsStyled';
-import Errorstory from 'components/component/Error/Errorstory';
-import { Loading } from 'components/component/Cast/CastStyles';
+import Errorstory from 'components/Error/Errorstory';
+import { Loading } from 'components/Cast/CastStyles';
 
 const MovieDetails = () => {
   const location = useLocation();

@@ -1,4 +1,4 @@
-import { HomeMoviesList } from 'components/component/HomeList/HomeMoviesList';
+import { HomeMoviesList } from 'components/HomeList/HomeMoviesList';
 import React from 'react';
 
 const Home = () => {
